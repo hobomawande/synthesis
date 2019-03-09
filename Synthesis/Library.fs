@@ -60,8 +60,9 @@ let digits num =
 
    
 
-let minmax _ =
-    failwith "Not implemented"
+let minmax (a,b,c,d )=
+ min a b |> min c|>min d,max a b |> max c|>max d 
+   
 
 let isLeap year =
  match year>1582 with
@@ -73,9 +74,8 @@ let isLeap year =
  
    
 
-let month number =
-    match number >=1 ||  number<=12 with
-    |true -> match number with
+let month  =function
+   
                 |1->"January", 31
                 |2->"February", 28
                 |3->"March", 31
@@ -88,8 +88,7 @@ let month number =
                 |10->"October", 31
                 |11->"November", 30
                 |12->"December", 31
-                |_-> "invalid", 0
-    |_-> failwith "Not implemented"
+                |_-> failwith "Not implemented"
 
 let toBinary _ =
     failwith "Not implemented"
