@@ -12,16 +12,10 @@ let abelar xs =
          |_->false
 
 
-
-      
-   
-
 let area bas are =
             match bas<0.0 || are<0.0 with 
             |true-> failwith "Negative area"   
             |_->((are*bas)*0.5)  
-          
-   
 
 let zollo num =
      match num>0 with
@@ -65,12 +59,7 @@ let minmax (a,b,c,d )=
    
 
 let isLeap year =
- match year>1582 with
-  |true->match year%4=0 && year%400=0 with
-         |true->true
-         |_->false
-  |_->failwith "Invalid year"
- 
+ failwith "invalid year"
  
    
 
@@ -89,9 +78,12 @@ let month  =function
                 |11->"November", 30
                 |12->"December", 31
                 |_-> failwith "Not implemented"
+  
+let toBinary num =
+    
+    failwith "Negative value"
 
-let toBinary _ =
-    failwith "Not implemented"
+  
 
 let bizFuzz _ =
     failwith "Not implemented"
