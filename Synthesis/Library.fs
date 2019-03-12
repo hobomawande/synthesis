@@ -105,10 +105,10 @@ let toBinary num =
 let bizFuzz num=
     let rec Count take (count, count1 ,count2)=
         match take>=1 with
-         |true -> match (take%3=0,take%5=0)  with
-                  |true,true -> Count (take-1) ((count+1),(count1+1),(count2+1))
-                  |true,false->Count (take-1) ((count+1),(count1+0),(count2+0))
-                  |false,true->Count (take-1) (count+0,count1+1,count2+0)
+         |true -> match (take%3=0,take%5=0,(take%5=0 && take%3=0))  with
+                  |true,true,true -> Count (take-1) ((count+1),(count1+1),(count2+1))
+                  |true,false,false->Count (take-1) ((count+1),(count1+0),(count2+0))
+                  |false,true,false->Count (take-1) (count+0,count1+1,count2+0)
                   |_ -> Count (take-1) ((count+0),(count1+0),(count2+0))          
          |_-> (count,count1,count2)
     Count num (0, 0, 0)
@@ -145,8 +145,7 @@ let monthDay day year =
 
    
 
-let coord (a,b) (c,d) =
- sqrt (((a-c)*(a-c)) +((b-d)*(b-d)))  
-
+let coord _ =
+ failwith "faild"
 
    
